@@ -20,22 +20,3 @@ The goal of this project is to study and implement, step by step, the core compo
 The focus is **learning and understanding**, not production-grade security.
 
 ---
-
-## Current Project Status
-
-At the current stage, the project implements:
-
-- Generation of **256-bit entropy (32 bytes)**
-- Private key validation ensuring that:
-  - The key size is exactly **32 bytes**
-  - The key is **not zero**
-  - The key is **smaller than the secp256k1 curve order**
-
-Key generation is repeated until a mathematically valid private key is obtained.
-
----
-
-## Mathematical Background
-
-In Bitcoin, a private key `k` must satisfy:
-
