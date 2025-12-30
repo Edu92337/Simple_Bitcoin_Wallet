@@ -12,7 +12,7 @@ using namespace std;
 
 int main(){
     vector<unsigned char>entropy = generate_entropy();
-    Block block(1,to_string(time(0)),"0000000000000000","", "Some transaction data",0,6);
+    Block block(1,to_string(time(0)),"0000000000000000","", "Some transaction data",0,4);
     auto [nonce,hash] = mine_block(block, block.getDifficulty());
     cout<<"Generated Entropy: ";
     for(auto byte: entropy){
