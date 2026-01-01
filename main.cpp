@@ -11,20 +11,25 @@ using namespace std;
 //g++ -Wall -Wextra -g3 main.cpp -o output/main -lssl -lcrypto && ./output/main
 
 int main(){
-    vector<unsigned char>entropy = generate_entropy();
+    auto [entropy,publick_key] = generate_entropy();
     Block block(1,to_string(time(0)),"0000000000000000","", "Some transaction data",0,4);
     auto [nonce,hash] = mine_block(block, block.getDifficulty());
-    cout<<"Generated Entropy: ";
+    cout<<"Generated Entropy(Private Key): ";
     for(auto byte: entropy){
         cout<<hex<<setw(2)<<setfill('0')<<(int)byte;
     }
     cout<<endl;
-    cout<<"Block Hash: "<<hash<<endl;
+    cout<<"\nPublic Key: ";
+    for(auto byte: publick_key){
+        cout<<hex<<setw(2)<<setfill('0')<<(int)byte;
+    }
+    cout<<dec<<endl;
+    cout<<"\nBlock Hash: "<<hash<<endl;
     for(auto byte: hash){
         cout<<hex<<setw(2)<<setfill('0')<<(int)byte;
     }
     cout<<dec<<endl;
-    cout<<"Mined Nonce: "<<nonce<<endl;
+    cout<<"\nMined Nonce: "<<nonce<<endl;
     
     
     return 0;
