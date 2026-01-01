@@ -8,7 +8,6 @@
 #include <cstring>
 #include <iomanip>
 #include <sstream>
-
 using namespace std;
 
 // Function to compute SHA-256 hash
