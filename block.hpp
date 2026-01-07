@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef BLOCK_HPP
 #define BLOCK_HPP
 
@@ -17,7 +19,7 @@ class Block{
         long long Nonce;
         int difficulty;
     public:
-        Block(long long idx, string dt, string last_h, string hsh, string dat, long long nonce, int diff)
+        Block(long long idx, string dt, string last_h, string hsh, string dat, long long nonce, int diff=4)
             : index(idx), date_time(dt), last_hash(last_h), hash_(hsh), data(dat), Nonce(nonce), difficulty(diff) {}
 
         long long getIndex() const { return index; }

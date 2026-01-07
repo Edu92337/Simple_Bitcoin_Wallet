@@ -1,3 +1,4 @@
+#pragma once
 #ifndef ENTROPY_HPP
 #define ENTROPY_HPP
 
